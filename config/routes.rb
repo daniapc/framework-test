@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bancodados
   
   #get 'home/index'
   get 'home/aboutus'

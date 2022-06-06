@@ -1,0 +1,2 @@
+module BancodadosHelper
+end

@@ -1,0 +1,2 @@
+class Bancodado < ApplicationRecord
+end

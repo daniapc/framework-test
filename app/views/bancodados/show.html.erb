@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bancodado %>
+
+<div>
+  <%= link_to "Edit this bancodado", edit_bancodado_path(@bancodado) %> |
+  <%= link_to "Back to bancodados", bancodados_path %>
+
+  <%= button_to "Destroy this bancodado", @bancodado, method: :delete %>
+</div>

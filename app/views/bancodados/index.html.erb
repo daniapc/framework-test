@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bancodados</h1>
+
+<div id="bancodados">
+  <% @bancodados.each do |bancodado| %>
+    <%= render bancodado %>
+    <p>
+      <%= link_to "Show this bancodado", bancodado %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bancodado", new_bancodado_path %>

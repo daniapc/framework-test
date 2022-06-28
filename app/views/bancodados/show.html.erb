@@ -1,10 +1,45 @@
 <p style="color: green"><%= notice %></p>
 
+<!--
+
 <%= render @bancodado %>
 
 <div>
-  <%= link_to "Edit this bancodado", edit_bancodado_path(@bancodado) %> |
-  <%= link_to "Back to bancodados", bancodados_path %>
+  <%= link_to "Edit", edit_bancodado_path(@bancodado) %> |
+  <%= link_to "Back", bancodados_path %>
 
-  <%= button_to "Destroy this bancodado", @bancodado, method: :delete %>
+  <%= button_to "Destroy", @bancodado, method: :delete %>
 </div>
+
+-->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nome</th> 
+      <th>cpf</th> 
+      <th>nascimento</th> 
+      <th>genero</th> 
+      <th>rg</th> 
+      <th>entidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr> 
+        <td> <%= @bancodado.id %> </td>
+        <td> <%= @bancodado.nome %> </td>
+        <td> <%= @bancodado.cpf %> </td>
+        <td> <%= @bancodado.nascimento %> </td>
+        <td> <%= @bancodado.genero %> </td>
+        <td> <%= @bancodado.rg %> </td>
+        <td> <%= @bancodado.entidade %> </td>
+        <td> <%= link_to "Edit", edit_bancodado_path(@bancodado) %> | 
+        <%= link_to "Back", bancodados_path %> 
+        <%= button_to "Destroy", @bancodado, method: :delete %> </td>
+      </tr>
+  </tbody>
+</table>
+

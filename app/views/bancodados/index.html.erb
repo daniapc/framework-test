@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Bancodados</h1>
 
 <table class="table table-striped table-bordered">
@@ -28,7 +26,7 @@
         <td> <%= bancodado.entidade %> </td>
         <td> <%= link_to "Show", bancodado %> </td>
         <td> <%= link_to "Edit", edit_bancodado_path(bancodado) %> </td>
-        <td> <%= link_to "Destroy", @bancodado, method: :delete %> </td>
+        <td> <%= button_to "Destroy", bancodado, method: :delete %> </td>
       </tr>
         <!-- <td> <%= render bancodado %> </td> -->
 

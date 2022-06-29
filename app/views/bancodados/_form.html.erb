@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <%= form.text_field :cpf, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :nascimento, style: "display: block" %>
-    <%= form.text_field :nascimento %>
+    <%= form.text_field :nascimento, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :genero, style: "display: block" %>
-    <%= form.text_field :genero %>
+    <%= form.text_field :genero, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :rg, style: "display: block" %>
-    <%= form.text_field :rg %>
+    <%= form.text_field :rg, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class= "form-group">
     <%= form.label :entidade, style: "display: block" %>
-    <%= form.text_field :entidade %>
+    <%= form.text_field :entidade, class: "form-control"  %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class= "actions">
+    <%= form.submit class: "btn btn-secondary" %>
   </div>
 <% end %>

@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <!--
 
 <%= render @bancodado %>
@@ -13,33 +11,29 @@
 
 -->
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>nome</th> 
-      <th>cpf</th> 
-      <th>nascimento</th> 
-      <th>genero</th> 
-      <th>rg</th> 
-      <th>entidade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="jumbotron">
+  <h1 class="display-4"> 
+    <%= @bancodado.nome %>
+  </h1>
 
-  <tbody>
-      <tr> 
-        <td> <%= @bancodado.id %> </td>
-        <td> <%= @bancodado.nome %> </td>
-        <td> <%= @bancodado.cpf %> </td>
-        <td> <%= @bancodado.nascimento %> </td>
-        <td> <%= @bancodado.genero %> </td>
-        <td> <%= @bancodado.rg %> </td>
-        <td> <%= @bancodado.entidade %> </td>
-        <td> <%= link_to "Edit", edit_bancodado_path(@bancodado) %> | 
-        <%= link_to "Back", bancodados_path %> 
-        <%= button_to "Destroy", @bancodado, method: :delete %> </td>
+
+  <table class="table">
+    <tbody>
+      <tr class="lead">
+        <td> Id: <%= @bancodado.id %> </td>
+        <td> CPF:  <%= @bancodado.cpf %> </td>
+        <td> Nascimento:  <%= @bancodado.nascimento %> </td>
+        <td> Gênero:  <%= @bancodado.genero %> </td>
+        <td> RG:  <%= @bancodado.rg %> </td>
+        <td> Entidade:  <%= @bancodado.entidade %> </td>
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+        <%= link_to "Edit", edit_bancodado_path(@bancodado), class: "btn btn-secondary" %> 
+        <%= link_to "Back", bancodados_path, class: "btn btn-dark" %> 
+        <br/><br/>
+        <%= button_to "Destroy", @bancodado, method: :delete, class: "btn btn-secondary" %>
+        
+</div>
 

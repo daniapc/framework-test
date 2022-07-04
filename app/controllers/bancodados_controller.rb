@@ -65,6 +65,6 @@ class BancodadosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bancodado_params
-      params.require(:bancodado).permit(:nome, :cpf, :nascimento, :genero, :rg, :entidade)
+      params.require(:bancodado).permit(:nome, :cpf, :nascimento, :genero, :rg, :entidade, :user_id)
     end
 end

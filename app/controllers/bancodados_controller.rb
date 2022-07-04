@@ -1,5 +1,7 @@
 class BancodadosController < ApplicationController
   before_action :set_bancodado, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /bancodados or /bancodados.json
   def index
@@ -12,7 +14,8 @@ class BancodadosController < ApplicationController
 
   # GET /bancodados/new
   def new
-    @bancodado = Bancodado.new
+    #@bancodado = Bancodado.new
+    @bancodado = current_user.bancodados.build
   end
 
   # GET /bancodados/1/edit
@@ -21,7 +24,8 @@ class BancodadosController < ApplicationController
 
   # POST /bancodados or /bancodados.json
   def create
-    @bancodado = Bancodado.new(bancodado_params)
+    #@bancodado = Bancodado.new(bancodado_params)
+    @bancodado = current_user.bancodados.build(bancodado_params)
 
     respond_to do |format|
       if @bancodado.save
@@ -55,6 +59,11 @@ class BancodadosController < ApplicationController
       format.html { redirect_to bancodados_url, notice: "Bancodado was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @bancodado = current_user.bancodados.find_by(id: params[:id])
+    redirect_to bancodados_path, notice: "Not authorized to edit this Friend" if @bancodado.nil?
   end
 
   private

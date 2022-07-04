@@ -1,41 +1,48 @@
-<h1>Bancodados</h1>
+<% if user_signed_in? %>
 
-<table class="table table-striped table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <!-- <th>id</th> -->
-      <th>Nome</th> 
-      <th>CPF</th> 
-      <th>Nascimento</th> 
-      <th>Genero</th> 
-      <th>RG</th> 
-      <th>Entidade</th>
-      <th>User ID</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Bancodados</h1>
 
-  <tbody>
-    <% @bancodados.each do |bancodado| %>
-      <% if bancodado.user == current_user %>
-      <tr> 
-        <!-- <td> <%= bancodado.id %> </td> -->
-        <td> <%= bancodado.nome %> </td>
-        <td> <%= bancodado.cpf %> </td>
-        <td> <%= bancodado.nascimento %> </td>
-        <td> <%= bancodado.genero %> </td>
-        <td> <%= bancodado.rg %> </td>
-        <td> <%= bancodado.entidade %> </td>
-        <td> <%= bancodado.user_id %> </td>
-        <td> <%= link_to "Show", bancodado %> </td>
-        <td> <%= link_to "Edit", edit_bancodado_path(bancodado) %> </td>
-        <td> <%= button_to "Destroy", bancodado, method: :delete %> </td>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th>id</th> -->
+        <th>Nome</th> 
+        <th>CPF</th> 
+        <th>Nascimento</th> 
+        <th>Genero</th> 
+        <th>RG</th> 
+        <th>Entidade</th>
+        <!-- <th>User ID</th> -->
+        <th colspan="3"></th>
       </tr>
+    </thead>
+
+    <tbody>
+      <% @bancodados.each do |bancodado| %>
+        <% if bancodado.user == current_user %>
+        <tr> 
+          <!-- <td> <%= bancodado.id %> </td> -->
+          <td> <%= link_to bancodado.nome, bancodado %> </td>
+          <td> <%= bancodado.cpf %> </td>
+          <td> <%= bancodado.nascimento %> </td>
+          <td> <%= bancodado.genero %> </td>
+          <td> <%= bancodado.rg %> </td>
+          <td> <%= bancodado.entidade %> </td>
+          <!-- <td> <%= bancodado.user_id %> </td> -->
+          <td> <%= button_to "Delete", bancodado, method: :delete, class: "btn btn-outline-danger" %> </td>
+        </tr>
+        <% end %>
+          <!-- <td> <%= render bancodado %> </td> -->
+
       <% end %>
-        <!-- <td> <%= render bancodado %> </td> -->
+    </tbody>
+  </table>
 
-    <% end %>
-  </tbody>
-</table>
+  <%= link_to "New bancodado", new_bancodado_path, class: "btn btn-info" %>
 
-<%= link_to "New bancodado", new_bancodado_path, class: "btn btn-info" %>
+<% else %>
+
+  <h1>Hello, Rails!</h1>
+  Essa é minha primeira webpage! Uhuuu!
+
+<% end %>
